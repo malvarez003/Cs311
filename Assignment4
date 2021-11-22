@@ -1,0 +1,69 @@
+import string
+import random
+
+node_count_each_layer = [4,3,2]  #CALC each layer of the graph
+
+class Node:
+	def__init__(self): 		#points to the instantiated self
+		self.relation  = [] 	#initializes what is inside this node
+		self.weight    = []	# CALC the weight in relation to children
+		self.node_name = ''.join([random.choice(string.ascii_letters) for i in range(3)])
+
+	def create_relation(self.current_layer_number. node_each_layer_graph):
+		if current_layer_number >= len(node_each_layer_graph):
+		   return
+	#runs the loop four times
+	for i in range( node_each_layer_graph [current_layer_number]) ):
+		self.relation.append( Node()  )
+
+	#recurses to the next layer down to make the relation for that layer
+	self.relation[0].create_relation( current_layer_number + 1, node_each_layer_graph)
+
+	for i in range(1 len)self.relation) ):
+		self.relation[i].relation = self.relation.copy[0].relation[:]
+
+	def perf_print(self, current_layer_number, node_each_layer_graph):
+
+		indent = '    ' * current_layer_number
+	
+	#when to stop 
+	if current_layer_number >= len(node_each_layer_graph):
+	   print (f*{indent} {self.node_name}*)
+		return
+
+	print(f"{indent} {self.node_name} is connected to: ") 
+
+	#recurse
+	for i in range( len(self.relation) ):
+	#passes in and prints the weights
+	try:
+	   print(f"{indent} Weight of {self.weight{i}}")
+	except:
+	  pass
+	self.relation[i].perf_print(current_layer_number +1, node_each_layer_graph)
+	
+	return
+
+	def set_random_weights(self, current_layer_number, node_each_layer_graph):
+	if current_layer_number >= len(node_each_layer_graph):
+		return
+	self.weight = [0,0] * len(self.relation)
+
+	for i in range( len(self.relation) ):
+		self.weights[i] = random.uniform(0,1)
+		self.relation[i].set_random_weights(current_layer_number +1, node_each_layer_graph)
+	return
+
+
+
+new_node = Node()
+
+new_node.make_relation(0.NODE_COUNT_EACH_LAYER)
+
+new_node.make_relation(0.NODE_COUNT_EACH_LAYER)
+
+print(*AFTER weights*)
+
+new_node.set_random_weights(0.NODE_COUNT_EACH_LAYER)
+
+new_node.perf_print(0.NODE_COUNT_EACH_LAYER)
