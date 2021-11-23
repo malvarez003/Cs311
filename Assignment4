@@ -58,9 +58,9 @@ class Node:
 
 new_node = Node()
 
-new_node.make_relation(0.NODE_COUNT_EACH_LAYER)
+new_node.create_relation(0.NODE_COUNT_EACH_LAYER)
 
-new_node.make_relation(0.NODE_COUNT_EACH_LAYER)
+new_node.create_relation(0.NODE_COUNT_EACH_LAYER)
 
 print(*AFTER weights*)
 
