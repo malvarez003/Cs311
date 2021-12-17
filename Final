@@ -1,0 +1,31 @@
+#include<iostream>  
+using namespace std;  
+int main ()  
+{    
+    int insertionList[10] = { 15,43,21,2,86,42,7,98,52,32};   
+       
+    cout<< endl;
+    cout << "The following list will be sorted: \n";
+   
+    for(int i=0;i<10;i++)  
+        {  
+        cout <<insertionList[i]<<"\t";  
+    }    
+    for(int j=1; j<10; j++)   
+    {  
+        int temp = insertionList[j];  
+        int newList= j-1;  
+        while(newList >=0 && temp <= insertionList[newList])  
+        {  
+            insertionList[newList+1] = insertionList[newList];   
+            newList = newList-1;  
+        }  
+        insertionList[newList+1] = temp;  
+    }  
+    cout << endl;
+    cout << "The Sorted list is \n" ;
+    for(int i=0;i<10;i++)  
+        {  
+        cout <<insertionList[i]<<"\t";  
+        }  
+}
