@@ -1,0 +1,38 @@
+#include<iostream>
+using namespace std;
+int main ()
+{
+   int i;
+   int x;
+   int compare;
+   int numPasses =0;
+   int bubbleSortArray[10] = {199,53,1,68,29,35,71,8,41,93};
+   cout <<"The list to be sorted is: \n";
+   for(i = 0; i<10; i++)
+    {
+      cout << bubbleSortArray[i]<<"   ";
+    }
+    
+    cout<<endl;
+    for(i = 0; i<10; i++) {
+    for(x = i+1; x<10; x++)
+   {
+      if(bubbleSortArray[x] < bubbleSortArray[i]) 
+      {
+         compare = bubbleSortArray[i];
+         bubbleSortArray[i] = bubbleSortArray[x];
+         bubbleSortArray[x] = compare;
+      }
+   }
+    numPasses++;
+    }
+    cout << endl;
+    cout << "The list is now sorted by bubble sort: \n ";
+    for(i = 0; i<10; i++)
+  {
+   cout <<bubbleSortArray[i]<<"   ";
+  }
+    cout << endl;
+    cout << "It took " << numPasses << " passes to sort the array. "<<endl;
+    return 0;   
+    }
